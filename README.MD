@@ -10,7 +10,7 @@ properties, own the business functionality/logic part of the analytics, and to h
 analytics platforms/tools but not necessarily own each platform/tool implementation.
 
 ## Supported Platforms
-Firebase, Adjust, CleverTap, Flurry
+`Firebase`, `Adjust`, `CleverTap`, `Flurry`
 
 ## Business Requirements
 Service should have the ability to log an event to all the supported platforms.
@@ -18,14 +18,15 @@ Service should have the ability to log an event to all the supported platforms.
 ## Sample Example:
 We need to log an event when the user selects a timeslot.
 Name: "user-selected-timeslot"
-Properties: {slot-from: "10:00", slot-to: "10:30"} //Date Format: "HH:mm"
-Trigger: didSelectTimeslot(timeslot: Timeslot) {} // Timeslot [from: Date, to: Date]
+Properties: ```json {slot-from: "10:00", slot-to: "10:30"}  ``` //Date Format: "HH:mm"
+Trigger: ```kotlin didSelectTimeslot(timeslot: Timeslot) {}  ``` // Timeslot [from: Date, to: Date]
 
 
 ## Extended Requirements
 1- We need our service to be able to attribute user details (email and phone) so we can be
 able attach the events to the user, given that this functionality is only supported in
-Firebase and CleverTap.
+`Firebase` and `CleverTap`.
+
 2- Some of our events will be screen-based, which is a normal event but only triggered
 when the screen loads, the difference is that these events should be logged only to
-Flurry
+`Flurry`
